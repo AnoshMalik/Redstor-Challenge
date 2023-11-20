@@ -10,6 +10,7 @@ export default function App() {
   const [cCost, setCCost] = useState(30);
   const [dCounter, setDCounter] = useState(0);
   const [dCost, setDCost] = useState(25);
+  const [total, setTotal] = useState(0);
 
   const incrementA = () => {
     setACounter(aCounter + 1);
@@ -29,8 +30,8 @@ export default function App() {
   };
 
   const countTotal = () => { 
-    let total =
-      aCost * aCounter + bCost * bCounter + cCost * cCounter + dCost * dCounter;
+    let total = aCost * aCounter + bCost * bCounter + cCost * cCounter + dCost * dCounter;
+      setTotal(total);
     return total;
   }
 
@@ -85,8 +86,8 @@ export default function App() {
 
       <div>
         <span>
-          <button>CHECKOUT</button>
-          <h3>TOTAL = { countTotal()}</h3>
+          <button onClick={countTotal }>CHECKOUT</button>
+          <h3>TOTAL = {total }</h3>
         </span>
       </div>
     </div>
