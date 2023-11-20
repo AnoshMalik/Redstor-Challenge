@@ -1,7 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 export default function App() {
+
+   useEffect(() => {
+     document.title = "REDSTOR Challenge";
+   }, []);
+
+
   const [aCounter, setACounter] = useState(0);
   const [aCost, setACost] = useState(60);
   const [bCounter, setBCounter] = useState(0);
