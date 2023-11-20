@@ -136,7 +136,9 @@ export default function App() {
           ></img>
           <p>A - £{aCost}</p>
           <h5>(3 for £150)</h5>
-          <button onClick={incrementA}>Add A</button>
+          <button onClick={incrementA} data-testid="incrementA">
+            Add A
+          </button>
         </div>
         <div className="">
           <img
@@ -170,7 +172,7 @@ export default function App() {
       </div>
       <div className="container">
         <span>
-          <h3>CART</h3>
+          <h3 data-testid="counterA">CART</h3>
           <ol>
             <li>
               A x {aCounter} @ £{aCost} each
