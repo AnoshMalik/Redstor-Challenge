@@ -10,7 +10,12 @@ export default function App() {
   const [cCost, setCCost] = useState(30);
   const [dCounter, setDCounter] = useState(0);
   const [dCost, setDCost] = useState(25);
-  const [total, setTotal] = useState(0);
+  const [globalTotal, setGlobalTotal] = useState(0);
+  // DISCOUNTS
+  const [aDiscount, setADiscount] = useState([3, 150]);
+  const [bDiscount, setBDiscount] = useState([2, 45]);
+  const [cDiscount, setCDiscount] = useState([0, 0]);
+  const [dDiscount, setDDiscount] = useState([0, 0]);
 
   const incrementA = () => {
     setACounter(aCounter + 1);
@@ -29,11 +34,36 @@ export default function App() {
     console.log(`A's current value = ${dCounter}`);
   };
 
-  const countTotal = () => { 
-    let total = aCost * aCounter + bCost * bCounter + cCost * cCounter + dCost * dCounter;
-      setTotal(total);
-    return total;
-  }
+  const countTotal = () => {
+    let aTotal = countATotal;
+    let bTotal = countBTotal;
+    let cTotal = countCTotal;
+    let dTotal = countDTotal;
+
+    let localTotal =
+      countATotal() + bCost * bCounter + cCost * cCounter + dCost * dCounter;
+    setGlobalTotal(localTotal);
+    return globalTotal;
+  };
+
+  const countATotal = () => {
+    let total = 0;
+
+    if ((aCounter == aDiscount[0])) {
+      total = aDiscount[1];
+    } else if (aCounter > aDiscount[0]) {
+      let whole = Math.floor(aCounter / aDiscount[0]);
+      let remainder = aCounter % aDiscount[0];
+      total = whole * aDiscount[1] + remainder * aCost;
+    } else {
+      total = aCounter * aCost;
+    }
+          return total;
+
+  };
+  const countBTotal = () => {};
+  const countCTotal = () => {};
+  const countDTotal = () => {};
 
   return (
     <div>
@@ -69,16 +99,16 @@ export default function App() {
           <h3>CART</h3>
           <ol>
             <li>
-              A x {aCounter} @ {aCost}
+              A x {aCounter} @ £{aCost} each
             </li>
             <li>
-              B x {bCounter} @ {bCost}
+              B x {bCounter} @ £{bCost} each
             </li>
             <li>
-              C x {cCounter} @ {cCost}
+              C x {cCounter} @ £{cCost} each
             </li>
             <li>
-              D x {dCounter} @ {dCost}
+              D x {dCounter} @ £{dCost} each
             </li>
           </ol>
         </span>
@@ -86,8 +116,8 @@ export default function App() {
 
       <div>
         <span>
-          <button onClick={countTotal }>CHECKOUT</button>
-          <h3>TOTAL = {total }</h3>
+          <button onClick={countTotal}>CHECKOUT</button>
+          <h3>TOTAL = £{globalTotal}</h3>
         </span>
       </div>
     </div>
