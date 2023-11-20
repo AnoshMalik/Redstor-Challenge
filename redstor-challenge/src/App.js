@@ -124,22 +124,24 @@ export default function App() {
         <span>
           <div>
             <img src="" alt="A"></img>
-            <p>Cost {aCost}</p>
+            <p>Cost £{aCost}</p>
+            <h5>Offer - 3 for £150</h5>
             <button onClick={incrementA}>Add A</button>
           </div>
           <div>
             <img src="" alt="B"></img>
-            <p>Cost {bCost}</p>
+            <p>Cost £{bCost}</p>
+            <h5>Offer - 2 for £45</h5>
             <button onClick={incrementB}>Add B</button>
           </div>
           <div>
             <img src="" alt="C"></img>
-            <p>Cost {cCost}</p>
+            <p>Cost £{cCost}</p>
             <button onClick={incrementC}>Add C</button>
           </div>
           <div>
             <img src="" alt="D"></img>
-            <p>Cost {dCost}</p>
+            <p>Cost £{dCost}</p>
             <button onClick={incrementD}>Add D</button>
           </div>
         </span>
@@ -173,3 +175,16 @@ export default function App() {
     </div>
   );
 }
+// MANUALLY TESTED -- > ALL TESTS PASSED
+// 1. A --> 60
+// 2. A B --> 90
+// 3. C D B A --> 145
+// 4. A A --> 120
+// 5. A A A --> 150
+// 6. A A A A --> 210
+// 7. A A A A A --> 270
+// 8. A A A A A A --> 300
+// 9. A A A B --> 180
+// 10. A A A B B --> 195
+// 11. A A A B B D --> 220
+// 12. D A B A B A --> 220
