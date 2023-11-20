@@ -8,7 +8,7 @@ export default function App() {
   const [bCost, setBCost] = useState(30);
   const [cCounter, setCCounter] = useState(0);
   const [cCost, setCCost] = useState(30);
-  const [dCounter, setdCounter] = useState(0);
+  const [dCounter, setDCounter] = useState(0);
   const [dCost, setDCost] = useState(25);
 
   const incrementA = () => {
@@ -16,16 +16,16 @@ export default function App() {
     console.log(`A's current value = ${aCounter}`);
   };
   const incrementB = () => {
-    setACounter(aCounter + 1);
-    console.log(`A's current value = ${aCounter}`);
+    setBCounter(bCounter + 1);
+    console.log(`A's current value = ${bCounter}`);
   };
   const incrementC = () => {
-    setACounter(aCounter + 1);
-    console.log(`A's current value = ${aCounter}`);
+    setCCounter(cCounter + 1);
+    console.log(`A's current value = ${cCounter}`);
   };
   const incrementD = () => {
-    setACounter(aCounter + 1);
-    console.log(`A's current value = ${aCounter}`);
+    setDCounter(dCounter + 1);
+    console.log(`A's current value = ${dCounter}`);
   };
 
   return (
@@ -37,22 +37,22 @@ export default function App() {
         <span>
           <div>
             <img src="" alt="A"></img>
-            <p>Cost</p>
+            <p>Cost {aCost}</p>
             <button onClick={incrementA}>Add A</button>
           </div>
           <div>
             <img src="" alt="B"></img>
-            <p>Cost</p>
+            <p>Cost {bCost}</p>
             <button onClick={incrementB}>Add B</button>
           </div>
           <div>
             <img src="" alt="C"></img>
-            <p>Cost</p>
+            <p>Cost {cCost}</p>
             <button onClick={incrementC}>Add C</button>
           </div>
           <div>
             <img src="" alt="D"></img>
-            <p>Cost</p>
+            <p>Cost {dCost}</p>
             <button onClick={incrementD}>Add D</button>
           </div>
         </span>
@@ -60,6 +60,12 @@ export default function App() {
       <div>
         <span>
           <h3>CART</h3>
+          <ol>
+            <li>A x {aCounter}</li>
+            <li>B x {bCounter}</li>
+            <li>c x {cCounter}</li>
+            <li>D x {dCounter}</li>
+          </ol>
         </span>
       </div>
     </div>
