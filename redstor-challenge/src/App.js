@@ -40,30 +40,80 @@ export default function App() {
     let cTotal = countCTotal;
     let dTotal = countDTotal;
 
-    let localTotal =
-      countATotal() + bCost * bCounter + cCost * cCounter + dCost * dCounter;
+    let localTotal = countATotal() + countBTotal() + countCTotal() + countDTotal();
     setGlobalTotal(localTotal);
     return globalTotal;
   };
 
   const countATotal = () => {
     let total = 0;
-
-    if ((aCounter == aDiscount[0])) {
-      total = aDiscount[1];
-    } else if (aCounter > aDiscount[0]) {
-      let whole = Math.floor(aCounter / aDiscount[0]);
-      let remainder = aCounter % aDiscount[0];
-      total = whole * aDiscount[1] + remainder * aCost;
-    } else {
+    if (aDiscount[0] == 0 || aDiscount[1] == 0) {
       total = aCounter * aCost;
+    } else {
+      if (aCounter === aDiscount[0]) {
+        total = aDiscount[1];
+      } else if (aCounter > aDiscount[0]) {
+        let whole = Math.floor(aCounter / aDiscount[0]);
+        let remainder = aCounter % aDiscount[0];
+        total = whole * aDiscount[1] + remainder * aCost;
+      } else {
+        total = aCounter * aCost;
+      }
     }
-          return total;
-
+    return total;
   };
-  const countBTotal = () => {};
-  const countCTotal = () => {};
-  const countDTotal = () => {};
+
+  const countBTotal = () => {
+    let total = 0;
+    if (bDiscount[0] == 0 || bDiscount[1] == 0) {
+      total = bCounter * bCost;
+    } else {
+      if (bCounter === bDiscount[0]) {
+        total = bDiscount[1];
+      } else if (bCounter > bDiscount[0]) {
+        let whole = Math.floor(bCounter / bDiscount[0]);
+        let remainder = bCounter % bDiscount[0];
+        total = whole * bDiscount[1] + remainder * bCost;
+      } else {
+        total = bCounter * bCost;
+      }
+    }
+    return total;
+  };
+  const countCTotal = () => {
+    let total = 0;
+    if (cDiscount[0] == 0 || cDiscount[1] == 0) {
+      total = cCounter * cCost;
+    } else {
+      if (cCounter === cDiscount[0]) {
+        total = cDiscount[1];
+      } else if (cCounter > cDiscount[0]) {
+        let whole = Math.floor(cCounter / cDiscount[0]);
+        let remainder = cCounter % cDiscount[0];
+        total = whole * cDiscount[1] + remainder * cCost;
+      } else {
+        total = cCounter * cCost;
+      }
+    }
+    return total;
+  };
+  const countDTotal = () => {
+    let total = 0;
+    if (dDiscount[0] == 0 || dDiscount[1] == 0) {
+      total = dCounter * dCost;
+    } else {
+      if (dCounter === dDiscount[0]) {
+        total = dDiscount[1];
+      } else if (dCounter > dDiscount[0]) {
+        let whole = Math.floor(dCounter / dDiscount[0]);
+        let remainder = dCounter % dDiscount[0];
+        total = whole * dDiscount[1] + remainder * dCost;
+      } else {
+        total = dCounter * dCost;
+      }
+    }
+    return total;
+  };
 
   return (
     <div>
@@ -117,7 +167,7 @@ export default function App() {
       <div>
         <span>
           <button onClick={countTotal}>CHECKOUT</button>
-          <h3>TOTAL = £{globalTotal}</h3>
+          <h3>TOTAL = £{globalTotal} (after discounts)</h3>
         </span>
       </div>
     </div>
