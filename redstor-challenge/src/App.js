@@ -28,6 +28,12 @@ export default function App() {
     console.log(`A's current value = ${dCounter}`);
   };
 
+  const countTotal = () => { 
+    let total =
+      aCost * aCounter + bCost * bCounter + cCost * cCounter + dCost * dCounter;
+    return total;
+  }
+
   return (
     <div>
       <div>
@@ -61,11 +67,26 @@ export default function App() {
         <span>
           <h3>CART</h3>
           <ol>
-            <li>A x {aCounter}</li>
-            <li>B x {bCounter}</li>
-            <li>c x {cCounter}</li>
-            <li>D x {dCounter}</li>
+            <li>
+              A x {aCounter} @ {aCost}
+            </li>
+            <li>
+              B x {bCounter} @ {bCost}
+            </li>
+            <li>
+              C x {cCounter} @ {cCost}
+            </li>
+            <li>
+              D x {dCounter} @ {dCost}
+            </li>
           </ol>
+        </span>
+      </div>
+
+      <div>
+        <span>
+          <button>CHECKOUT</button>
+          <h3>TOTAL = { countTotal()}</h3>
         </span>
       </div>
     </div>
