@@ -8,6 +8,13 @@ test("1. Add A - once", () => {
   const incrementBtnA = screen.getByTestId("incrementA");
   fireEvent.click(incrementBtnA);
   expect(counterA).toHaveTextContent("1");
+
+  const checkoutButton = screen.getByTestId("checkoutButton");
+  const checkoutTotal = screen.getByTestId("checkoutTotal");
+  fireEvent.click(checkoutButton);
+  expect(checkoutTotal).toHaveTextContent("60");
+
+
 });
 
 test("2. Add A and B", () => {
@@ -16,11 +23,15 @@ test("2. Add A and B", () => {
   const counterB = screen.getByTestId("counterB");
   const incrementBtnA = screen.getByTestId("incrementA");
   const incrementBtnB = screen.getByTestId("incrementB");
-
   fireEvent.click(incrementBtnA);
   fireEvent.click(incrementBtnB);
   expect(counterA).toHaveTextContent("1");
   expect(counterB).toHaveTextContent("1");
+
+  const checkoutButton = screen.getByTestId("checkoutButton");
+  const checkoutTotal = screen.getByTestId("checkoutTotal");
+  fireEvent.click(checkoutButton);
+  expect(checkoutTotal).toHaveTextContent("90");
 });
 
 test("3. Add C,D,B,A", () => {
@@ -42,6 +53,11 @@ test("3. Add C,D,B,A", () => {
   expect(counterD).toHaveTextContent("1");
   expect(counterB).toHaveTextContent("1");
   expect(counterA).toHaveTextContent("1");
+
+  const checkoutButton = screen.getByTestId("checkoutButton");
+  const checkoutTotal = screen.getByTestId("checkoutTotal");
+  fireEvent.click(checkoutButton);
+  expect(checkoutTotal).toHaveTextContent("145");
 });
 
 test("4. Add A - 2x", () => {
@@ -51,6 +67,11 @@ test("4. Add A - 2x", () => {
   fireEvent.click(incrementBtnA);
   fireEvent.click(incrementBtnA);
   expect(counterA).toHaveTextContent("2");
+
+  const checkoutButton = screen.getByTestId("checkoutButton");
+  const checkoutTotal = screen.getByTestId("checkoutTotal");
+  fireEvent.click(checkoutButton);
+  expect(checkoutTotal).toHaveTextContent("120");
 });
 
 test("5. Add A - 3x", () => {
@@ -61,6 +82,11 @@ test("5. Add A - 3x", () => {
   fireEvent.click(incrementBtnA);
   fireEvent.click(incrementBtnA);
   expect(counterA).toHaveTextContent("3");
+
+  const checkoutButton = screen.getByTestId("checkoutButton");
+  const checkoutTotal = screen.getByTestId("checkoutTotal");
+  fireEvent.click(checkoutButton);
+  expect(checkoutTotal).toHaveTextContent("150");
 });
 
 test("6. Add A - 4x", () => {
@@ -72,6 +98,11 @@ test("6. Add A - 4x", () => {
   fireEvent.click(incrementBtnA);
   fireEvent.click(incrementBtnA);
   expect(counterA).toHaveTextContent("4");
+
+  const checkoutButton = screen.getByTestId("checkoutButton");
+  const checkoutTotal = screen.getByTestId("checkoutTotal");
+  fireEvent.click(checkoutButton);
+  expect(checkoutTotal).toHaveTextContent("210");
 });
 
 test("7. Add A - 5x", () => {
@@ -84,6 +115,11 @@ test("7. Add A - 5x", () => {
   fireEvent.click(incrementBtnA);
   fireEvent.click(incrementBtnA);
   expect(counterA).toHaveTextContent("5");
+
+  const checkoutButton = screen.getByTestId("checkoutButton");
+  const checkoutTotal = screen.getByTestId("checkoutTotal");
+  fireEvent.click(checkoutButton);
+  expect(checkoutTotal).toHaveTextContent("270");
 });
 
 test("8. Add A - 6x", () => {
@@ -97,6 +133,11 @@ test("8. Add A - 6x", () => {
   fireEvent.click(incrementBtnA);
   fireEvent.click(incrementBtnA);
   expect(counterA).toHaveTextContent("6");
+
+  const checkoutButton = screen.getByTestId("checkoutButton");
+  const checkoutTotal = screen.getByTestId("checkoutTotal");
+  fireEvent.click(checkoutButton);
+  expect(checkoutTotal).toHaveTextContent("300");
 });
 
 test("9. Add AAAB", () => {
@@ -112,6 +153,11 @@ test("9. Add AAAB", () => {
 
   expect(counterA).toHaveTextContent("3");
   expect(counterB).toHaveTextContent("1");
+  
+const checkoutButton = screen.getByTestId("checkoutButton");
+const checkoutTotal = screen.getByTestId("checkoutTotal");
+fireEvent.click(checkoutButton);
+expect(checkoutTotal).toHaveTextContent("180");
 });
 
 test("10. Add AAABB", () => {
@@ -127,6 +173,11 @@ test("10. Add AAABB", () => {
   fireEvent.click(incrementBtnB);
   expect(counterA).toHaveTextContent("3");
   expect(counterB).toHaveTextContent("2");
+
+  const checkoutButton = screen.getByTestId("checkoutButton");
+  const checkoutTotal = screen.getByTestId("checkoutTotal");
+  fireEvent.click(checkoutButton);
+  expect(checkoutTotal).toHaveTextContent("195");
 });
 
 test("11. Add AAABBD", () => {
@@ -146,6 +197,11 @@ test("11. Add AAABBD", () => {
   expect(counterA).toHaveTextContent("3");
   expect(counterB).toHaveTextContent("2");
   expect(counterD).toHaveTextContent("1");
+
+  const checkoutButton = screen.getByTestId("checkoutButton");
+  const checkoutTotal = screen.getByTestId("checkoutTotal");
+  fireEvent.click(checkoutButton);
+  expect(checkoutTotal).toHaveTextContent("220");
 });
 
 test("12. Add DABABA", () => {
@@ -165,4 +221,9 @@ test("12. Add DABABA", () => {
   expect(counterD).toHaveTextContent("1");
   expect(counterB).toHaveTextContent("2");
   expect(counterA).toHaveTextContent("3");
+
+  const checkoutButton = screen.getByTestId("checkoutButton");
+  const checkoutTotal = screen.getByTestId("checkoutTotal");
+  fireEvent.click(checkoutButton);
+  expect(checkoutTotal).toHaveTextContent("220");
 });

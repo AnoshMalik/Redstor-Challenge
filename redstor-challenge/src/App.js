@@ -190,8 +190,12 @@ export default function App() {
 
       <div className="container">
         <span>
-          <button onClick={countTotal}>CHECKOUT</button>
-          <h3>TOTAL = £{globalTotal} (after discounts)</h3>
+          <button onClick={countTotal} data-testid="checkoutButton">
+            CHECKOUT
+          </button>
+          <h3 data-testid="checkoutTotal">
+            TOTAL = £{globalTotal} (after discounts)
+          </h3>
         </span>
       </div>
     </div>
