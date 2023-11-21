@@ -99,3 +99,70 @@ test("8. Add A - 6x", () => {
   expect(counterA).toHaveTextContent("6");
 });
 
+test("9. Add AAAB", () => {
+  render(<App />);
+  const counterA = screen.getByTestId("counterA");
+  const incrementBtnA = screen.getByTestId("incrementA");
+  const counterB = screen.getByTestId("counterB");
+  const incrementBtnB = screen.getByTestId("incrementB");
+  fireEvent.click(incrementBtnA);
+  fireEvent.click(incrementBtnA);
+  fireEvent.click(incrementBtnA);
+  fireEvent.click(incrementBtnB);
+
+  expect(counterA).toHaveTextContent("3");
+  expect(counterB).toHaveTextContent("1");
+});
+
+test("10. Add AAABB", () => {
+  render(<App />);
+  const counterA = screen.getByTestId("counterA");
+  const incrementBtnA = screen.getByTestId("incrementA");
+  const counterB = screen.getByTestId("counterB");
+  const incrementBtnB = screen.getByTestId("incrementB");
+  fireEvent.click(incrementBtnA);
+  fireEvent.click(incrementBtnA);
+  fireEvent.click(incrementBtnA);
+  fireEvent.click(incrementBtnB);
+  fireEvent.click(incrementBtnB);
+  expect(counterA).toHaveTextContent("3");
+  expect(counterB).toHaveTextContent("2");
+});
+
+test("11. Add AAABBD", () => {
+  render(<App />);
+  const counterA = screen.getByTestId("counterA");
+  const incrementBtnA = screen.getByTestId("incrementA");
+  const counterB = screen.getByTestId("counterB");
+  const incrementBtnB = screen.getByTestId("incrementB");
+  const counterD = screen.getByTestId("counterD");
+  const incrementBtnD = screen.getByTestId("incrementD");
+  fireEvent.click(incrementBtnA);
+  fireEvent.click(incrementBtnA);
+  fireEvent.click(incrementBtnA);
+  fireEvent.click(incrementBtnB);
+  fireEvent.click(incrementBtnB);
+  fireEvent.click(incrementBtnD);
+  expect(counterA).toHaveTextContent("3");
+  expect(counterB).toHaveTextContent("2");
+  expect(counterD).toHaveTextContent("1");
+});
+
+test("12. Add DABABA", () => {
+  render(<App />);
+  const counterA = screen.getByTestId("counterA");
+  const incrementBtnA = screen.getByTestId("incrementA");
+  const counterB = screen.getByTestId("counterB");
+  const incrementBtnB = screen.getByTestId("incrementB");
+  const counterD = screen.getByTestId("counterD");
+  const incrementBtnD = screen.getByTestId("incrementD");
+  fireEvent.click(incrementBtnD);
+  fireEvent.click(incrementBtnA);
+  fireEvent.click(incrementBtnB);
+  fireEvent.click(incrementBtnA);
+  fireEvent.click(incrementBtnB);
+  fireEvent.click(incrementBtnA);
+  expect(counterD).toHaveTextContent("1");
+  expect(counterB).toHaveTextContent("2");
+  expect(counterA).toHaveTextContent("3");
+});
