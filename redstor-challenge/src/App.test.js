@@ -274,7 +274,7 @@ test("14. Add AAABB", () => {
   expect(checkoutTotal).toHaveTextContent("194");
 });
 
-// SHOULD FAIL - confirmation
+// SHOULD FAIL - confirmation test
 test("15. Add C,D,B,A", () => {
   render(<App />);
   const counterC = screen.getByTestId("counterC");
