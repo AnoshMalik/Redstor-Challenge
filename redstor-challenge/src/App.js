@@ -29,19 +29,19 @@ export default function App() {
 
   const incrementA = () => {
     setACounter(aCounter + 1);
-    console.log(`A's current value = ${aCounter}`);
+    // console.log(`A's current value = ${aCounter}`);
   };
   const incrementB = () => {
     setBCounter(bCounter + 1);
-    console.log(`A's current value = ${bCounter}`);
+    // console.log(`B's current value = ${bCounter}`);
   };
   const incrementC = () => {
     setCCounter(cCounter + 1);
-    console.log(`A's current value = ${cCounter}`);
+    // console.log(`C's current value = ${cCounter}`);
   };
   const incrementD = () => {
     setDCounter(dCounter + 1);
-    console.log(`A's current value = ${dCounter}`);
+    // console.log(`D's current value = ${dCounter}`);
   };
 
   const countTotal = () => {
@@ -145,21 +145,27 @@ export default function App() {
           <img src={banana} alt="B"></img>
           <p>B - £{bCost}</p>
           <h5>(2 for £45) </h5>
-          <button onClick={incrementB}>Add B</button>
+          <button onClick={incrementB} data-testid="incrementB">
+            Add B
+          </button>
         </div>
         <div className="">
           <img src={cherry} alt="C"></img>
           <p>C - £{cCost}</p>
           <h5>-</h5>
 
-          <button onClick={incrementC}>Add C</button>
+          <button onClick={incrementC} data-testid="incrementC">
+            Add C
+          </button>
         </div>
         <div className="">
           <img src={dragonfruit} alt="D"></img>
           <p>D - £{dCost}</p>
           <h5> - </h5>
 
-          <button onClick={incrementD}>Add D</button>
+          <button onClick={incrementD} data-testid="incrementD">
+            Add D
+          </button>
         </div>
       </div>
       <div className="container">
@@ -169,13 +175,13 @@ export default function App() {
             <li data-testid="counterA">
               A x {aCounter} @ £{aCost} each
             </li>
-            <li>
+            <li data-testid="counterB">
               B x {bCounter} @ £{bCost} each
             </li>
-            <li>
+            <li data-testid="counterC">
               C x {cCounter} @ £{cCost} each
             </li>
-            <li>
+            <li data-testid="counterD">
               D x {dCounter} @ £{dCost} each
             </li>
           </ol>
