@@ -1,13 +1,14 @@
-# Redstor-Challenge
-# REDSTOR CHALLENGE [JAVA]
+# Redstor-Challenge-JS
 ![redstorlogo](https://github.com/AnoshMalik/Redstor-Challenge-Java/assets/3519251/1c6c37b5-e6c5-43f2-9ec6-05cff1218577)
+
+------------------------------------------------------------------------------------------
 
 Project Specs :
 Written in JS(X) in React using create-react-app in VS Code
 Tested using react-testing-library
 Deployed on render and azure
-1. [Azure] (https://nice-bush-0fde8aa03.4.azurestaticapps.net/)
-2. [https://redstor-challenge.onrender.com/](https://redstor-challenge.onrender.com/)
+1. Azure - https://nice-bush-0fde8aa03.4.azurestaticapps.net/
+2. Render - https://redstor-challenge.onrender.com/
 
 Build/Compilation Instructions
 1. Clone repo
@@ -19,8 +20,8 @@ Build/Compilation Instructions
 
 
 ------------------------------------------------------------------------------------------
-The Challenge
-Implement the code for a supermarket checkout that calculates the total price of a number of
+##The Challenge
+###Implement the code for a supermarket checkout that calculates the total price of a number of
 items. In a normal supermarket, items are identified using Stock Keeping Units (SKUs), but
 in our store we’ll be using individual letters of the alphabet (A, B, C etc). Our goods are
 priced individually, but some items also have multibuy offers. For example, item A might cost
