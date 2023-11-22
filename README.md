@@ -1,9 +1,9 @@
-# Redstor-Challenge-JS
+# Redstor Challenge [JS]
 ![redstorlogo](https://github.com/AnoshMalik/Redstor-Challenge-Java/assets/3519251/1c6c37b5-e6c5-43f2-9ec6-05cff1218577)
 
 ------------------------------------------------------------------------------------------
 
-Project Specs :
+Project Specs : <br/>
 Written in JS(X) in React using create-react-app in VS Code
 Tested using react-testing-library
 Deployed on render and azure
@@ -13,7 +13,7 @@ Deployed on render and azure
 Build/Compilation Instructions
 1. Clone repo
 2. In terminal > Move to redstor-challenge folder > cd redstor-challenge
-3. Type npm i
+3. Type > npm i
 4. Type > npm start (to start server)
 5. Type > npm test (type a after npm run test to run all tests, if prompted)
 6. Type > npm build (should you choose to build and deploy elsewhere)
